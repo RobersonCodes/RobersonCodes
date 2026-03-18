@@ -101,16 +101,6 @@ src="https://github-readme-stats.vercel.app/api/top-langs/?username=RobersonCode
 
 ---
 
-# 🐍 Minhas Contribuições
-
-<p align="center">
-
-<img src="https://raw.githubusercontent.com/RobersonCodes/RobersonCodes/output/github-contribution-grid-snake-dark.svg"/>
-
-</p>
-
----
-
 # 🌐 Conecte-se comigo
 
 <div>
