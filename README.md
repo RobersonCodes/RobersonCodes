@@ -74,15 +74,26 @@ Projetos focados em comunicação entre frontend e backend, consumo de APIs e or
 
 ---
 
-# Estatísticas do GitHub
+# 📊 Estatísticas do GitHub
 
 <p align="center">
 
-<img height="180em"
-src="https://github-readme-stats.vercel.app/api?username=RobersonCodes&show_icons=true&theme=github_dark"/>
+<img height="170"
+src="https://github-readme-stats.vercel.app/api?username=RobersonCodes&show_icons=true&theme=github_dark&hide_border=true"/>
 
-<img height="180em"
-src="https://github-readme-stats.vercel.app/api/top-langs/?username=RobersonCodes&layout=compact&theme=github_dark"/>
+<img height="170"
+src="https://github-readme-stats.vercel.app/api/top-langs/?username=RobersonCodes&layout=compact&theme=github_dark&hide_border=true"/>
+
+</p>
+
+---
+
+# 🔥 Sequência de Contribuições
+
+<p align="center">
+
+<img
+src="https://streak-stats.demolab.com?user=RobersonCodes&theme=github-dark&hide_border=true"/>
 
 </p>
 
