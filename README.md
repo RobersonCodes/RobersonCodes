@@ -2,13 +2,15 @@
 
 # Roberson André do Amarante de Oliveira
 
-Backend Developer | APIs REST | Node.js | TypeScript | Java | SQL
+Backend Developer | Node.js | TypeScript | Java | SQL | APIs REST
 
 Profissional em transição estratégica para Tecnologia da Informação, com experiência em ambientes produtivos que exigem disciplina, organização e alto padrão de qualidade.
 
 Atuo no desenvolvimento de sistemas com foco em backend, criando APIs REST estruturadas, aplicações web e soluções com persistência de dados utilizando boas práticas de engenharia de software.
 
 Minha experiência anterior na indústria metalúrgica contribuiu para uma abordagem orientada a processos, eficiência operacional e resolução estruturada de problemas, competências aplicadas diretamente no desenvolvimento de software.
+
+Busco oportunidades como Desenvolvedor Backend Júnior, contribuindo com código limpo, organização de projetos e evolução contínua em engenharia de software.
 
 ---
 
@@ -17,9 +19,10 @@ Minha experiência anterior na indústria metalúrgica contribuiu para uma abord
 Backend Development
 • Node.js
 • TypeScript
+• JavaScript
 • Java
-• APIs REST
 • Express
+• APIs REST
 • Integração de sistemas
 
 Banco de Dados
@@ -27,13 +30,15 @@ Banco de Dados
 • MySQL
 • SQLite
 • Modelagem de dados
+• Persistência de dados
 
-Arquitetura e Qualidade de Código
-• POO (Programação Orientada a Objetos)
-• Organização em camadas
+Arquitetura e Qualidade
+• Programação Orientada a Objetos (POO)
 • Clean Code
+• Organização em camadas
 • Estruturação de projetos
 • Tratamento de erros
+• Boas práticas de desenvolvimento
 
 Ferramentas
 • Git
@@ -52,14 +57,54 @@ Frontend (apoio)
 
 # Projetos em Destaque
 
-API REST para gerenciamento de dados
-Desenvolvimento de API estruturada com Node.js e TypeScript, incluindo organização de rotas, tratamento de requisições e persistência de dados.
+ViaLivre AI
+API REST para análise inteligente de condições de transporte, considerando distância, clima e risco de trânsito.
 
-Sistema desktop com persistência em banco de dados
-Aplicação desenvolvida em Java com integração MySQL, utilizando conceitos de POO e estruturação em camadas.
+Tecnologias:
+Node.js
+Express
+SQLite
+Arquitetura em camadas
+Integração de dados
 
-Aplicações web com integração de dados
-Projetos focados em comunicação entre frontend e backend, consumo de APIs e organização de código.
+Diferenciais:
+Estrutura escalável
+Organização de rotas
+Tratamento de dados
+Simulação de análise inteligente
+
+---
+
+Task Manager API
+API REST para gerenciamento de tarefas com estrutura organizada e boas práticas de backend.
+
+Tecnologias:
+TypeScript
+Node.js
+Express
+Organização de código
+CRUD completo
+
+Diferenciais:
+Estrutura clara
+Separação de responsabilidades
+Organização profissional
+
+---
+
+Sistema Java com banco de dados
+Aplicação desktop com persistência de dados utilizando Java e MySQL.
+
+Tecnologias:
+Java
+MySQL
+POO
+DAO pattern
+
+Diferenciais:
+Integração com banco de dados
+Estrutura orientada a objetos
+Organização em camadas
 
 ---
 
@@ -71,39 +116,37 @@ Projetos focados em comunicação entre frontend e backend, consumo de APIs e or
 • Experiência com resolução de problemas técnicos
 • Perfil colaborativo e orientado a resultados
 • Evolução constante em engenharia de software
+• Foco em backend e integração de sistemas
 
 ---
 
-# 📊 Estatísticas do GitHub
+# Tecnologias
 
-<p align="center">
+<p>
 
-<img height="170"
-src="https://github-readme-stats-sigma-five.vercel.app/api?username=RobersonCodes&show_icons=true&theme=github_dark"/>
+<img align="center" alt="JS" height="30" width="40"
+src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
 
-<img height="170"
-src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=RobersonCodes&layout=compact&theme=github_dark"/>
+<img align="center" alt="TS" height="30" width="40"
+src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg">
 
-</p>
+<img align="center" alt="Node" height="30" width="40"
+src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg">
 
----
+<img align="center" alt="Java" height="30" width="40"
+src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg">
 
-# 🔥 Sequência de Contribuições
+<img align="center" alt="React" height="30" width="40"
+src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
 
-<p align="center">
+<img align="center" alt="HTML" height="30" width="40"
+src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
 
-<img
-src="https://streak-stats.demolab.com?user=RobersonCodes&theme=github-dark&hide_border=true"/>
+<img align="center" alt="CSS" height="30" width="40"
+src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
 
-</p>
-
----
-
-# Atividade de Desenvolvimento
-
-<p align="center">
-
-<img src="https://streak-stats.demolab.com?user=RobersonCodes&theme=github-dark"/>
+<img align="center" alt="Python" height="30" width="40"
+src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
 
 </p>
 
@@ -115,6 +158,7 @@ src="https://streak-stats.demolab.com?user=RobersonCodes&theme=github-dark&hide_
 LinkedIn
 </a>
 
+Email:
 contatoroberson_sl@hotmail.com
 
 ---
