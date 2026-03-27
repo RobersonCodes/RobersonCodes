@@ -1,63 +1,80 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,100:203a43&height=200&section=header&text=Roberson%20Oliveira&fontSize=40&fontColor=ffffff&animation=fadeIn"/>
 
-# 👋 Olá! Eu sou Roberson André do Amarante de Oliveira
+# Roberson André do Amarante de Oliveira
 
-🎓 Estudante Técnico em **Desenvolvimento de Sistemas**  
-💻 Desenvolvedor em formação | Transição de carreira para **Tecnologia da Informação**
+Backend Developer | APIs REST | Node.js | TypeScript | Java | SQL
 
-Sou um desenvolvedor em formação realizando uma transição estruturada da **indústria metalúrgica para a área de tecnologia**.
+Profissional em transição estratégica para Tecnologia da Informação, com experiência em ambientes produtivos que exigem disciplina, organização e alto padrão de qualidade.
 
-Tenho **3 anos de experiência na área metalúrgica**, atuando em ambiente produtivo com foco em:
+Atuo no desenvolvimento de sistemas com foco em backend, criando APIs REST estruturadas, aplicações web e soluções com persistência de dados utilizando boas práticas de engenharia de software.
 
-✔ padronização de processos  
-✔ eficiência operacional  
-✔ organização e qualidade  
-✔ cumprimento de metas produtivas  
-
-Essa experiência fortaleceu competências como **disciplina, responsabilidade e atenção a detalhes**, habilidades que hoje aplico diretamente no **desenvolvimento de software**.
-
-Atualmente desenvolvo:
-
-- APIs REST
-- aplicações web
-- projetos estruturados
-- código organizado e versionado com Git
-
-🎯 **Objetivo:**  
-Atuar como **Desenvolvedor Júnior ou Estagiário**, contribuindo com aprendizado rápido, responsabilidade técnica e colaboração em equipe.
+Minha experiência anterior na indústria metalúrgica contribuiu para uma abordagem orientada a processos, eficiência operacional e resolução estruturada de problemas, competências aplicadas diretamente no desenvolvimento de software.
 
 ---
 
-# 🚀 Tecnologias
+# Competências Técnicas
 
-<div style="display: inline_block"><br>
+Backend Development
+• Node.js
+• TypeScript
+• Java
+• APIs REST
+• Express
+• Integração de sistemas
 
-<img align="center" alt="JS" height="30" width="40"
-src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+Banco de Dados
+• SQL
+• MySQL
+• SQLite
+• Modelagem de dados
 
-<img align="center" alt="TS" height="30" width="40"
-src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg">
+Arquitetura e Qualidade de Código
+• POO (Programação Orientada a Objetos)
+• Organização em camadas
+• Clean Code
+• Estruturação de projetos
+• Tratamento de erros
 
-<img align="center" alt="React" height="30" width="40"
-src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
+Ferramentas
+• Git
+• GitHub
+• Versionamento de código
+• VS Code
+• Postman
 
-<img align="center" alt="HTML" height="30" width="40"
-src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-
-<img align="center" alt="CSS" height="30" width="40"
-src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
-
-<img align="center" alt="Python" height="30" width="40"
-src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
-
-<img align="center" alt="C#" height="30" width="40"
-src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg">
-
-</div>
+Frontend (apoio)
+• HTML
+• CSS
+• JavaScript
+• React
 
 ---
 
-# 📊 Estatísticas do GitHub
+# Projetos em Destaque
+
+API REST para gerenciamento de dados
+Desenvolvimento de API estruturada com Node.js e TypeScript, incluindo organização de rotas, tratamento de requisições e persistência de dados.
+
+Sistema desktop com persistência em banco de dados
+Aplicação desenvolvida em Java com integração MySQL, utilizando conceitos de POO e estruturação em camadas.
+
+Aplicações web com integração de dados
+Projetos focados em comunicação entre frontend e backend, consumo de APIs e organização de código.
+
+---
+
+# Diferenciais Profissionais
+
+• Forte capacidade de aprendizado contínuo
+• Organização e disciplina aplicadas ao desenvolvimento
+• Estruturação de código clara e escalável
+• Experiência com resolução de problemas técnicos
+• Perfil colaborativo e orientado a resultados
+• Evolução constante em engenharia de software
+
+---
+
+# Estatísticas do GitHub
 
 <p align="center">
 
@@ -71,7 +88,7 @@ src="https://github-readme-stats.vercel.app/api/top-langs/?username=RobersonCode
 
 ---
 
-# 🔥 Sequência de Contribuições
+# Atividade de Desenvolvimento
 
 <p align="center">
 
@@ -81,52 +98,14 @@ src="https://github-readme-stats.vercel.app/api/top-langs/?username=RobersonCode
 
 ---
 
-# 🏆 Conquistas no GitHub
+# Conecte-se comigo
 
-<p align="center">
+<a href="https://www.linkedin.com/in/roberson-de-oliveira-tecnologia-45875016a">
+LinkedIn
+</a>
 
-<img src="https://github-profile-trophy.vercel.app/?username=RobersonCodes&theme=darkhub"/>
-
-</p>
+contatoroberson_sl@hotmail.com
 
 ---
 
-# 📈 Atividade no GitHub
-
-<p align="center">
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=RobersonCodes&theme=github-dark"/>
-
-</p>
-
----
-
-# 🌐 Conecte-se comigo
-
-<div>
-
-<a href="https://www.linkedin.com/in/roberson-de-oliveira-tecnologia-45875016a" target="_blank">
-<img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white">
-</a>
-
-<a href="mailto:contatoroberson_sl@hotmail.com">
-<img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white">
-</a>
-
-<a href="https://instagram.com/oliv.eiraroberson" target="_blank">
-<img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white">
-</a>
-
-<a href="https://www.youtube.com/channel/UC_-uuuZbY0AAt9CViNzvc-Q" target="_blank">
-<img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white">
-</a>
-
-<a href="https://www.twitch.tv/roberson.oliveira" target="_blank">
-<img src="https://img.shields.io/badge/Twitch-9146FF?style=for-the-badge&logo=twitch&logoColor=white">
-</a>
-
-</div>
-
----
-
-<img src="https://komarev.com/ghpvc/?username=RobersonCodes&color=blue"/>
+Perfil em constante evolução, focado no desenvolvimento de soluções sólidas, organizadas e escaláveis.
