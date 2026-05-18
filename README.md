@@ -1,7 +1,9 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,100:203a43&height=260&section=header&text=Roberson%20Oliveira&fontSize=45&fontColor=ffffff&animation=fadeIn&fontAlignY=35"/><h1 align="center">Roberson André do Amarante de Oliveira</h1><h3 align="center">
 Backend Developer • Node.js • TypeScript • Java • Spring Boot
 </h3><p align="center">
-Founder at Oliveira Systems
+Founder at Oliveira Systems 🚀
+</p><p align="center">
+Building scalable systems, SaaS platforms and modern backend architectures.
 </p>---
 
 🚀 About Me
@@ -101,33 +103,42 @@ Tecnologias
 
 ---
 
-📊 GitHub Stats
+📊 GitHub Analytics
 
-<p align="center"><img height="180em" src="https://github-readme-stats.vercel.app/api?username=RobersonCodes&show_icons=true&theme=tokyonight&hide_border=true"/><img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=RobersonCodes&layout=compact&theme=tokyonight&hide_border=true"/></p>---
+<p align="center"><img height="180em" src="https://github-readme-stats.vercel.app/api?username=RobersonCodes&show_icons=true&theme=tokyonight&hide_border=true"/><img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=RobersonCodes&layout=compact&theme=tokyonight&hide_border=true"/></p><p align="center"><img src="https://github-readme-activity-graph.vercel.app/graph?username=RobersonCodes&theme=tokyo-night&hide_border=true"/></p>---
 
 🌎 Connect With Me
 
-<p align="left"><a href="https://www.linkedin.com/in/roberson-de-oliveira-tecnologia">
-<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
-</a><a href="https://github.com/RobersonCodes">
+<p align="left"><a href="https://github.com/RobersonCodes">
 <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/>
+</a><a href="https://www.linkedin.com/in/roberson-de-oliveira-tecnologia">
+<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a><a href="https://www.instagram.com/roberson_oliveiraa/?utm_source=qr&r=nametag">
+<img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
 </a><a href="https://oliveirasystems.dev">
-<img src="https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=About.me&logoColor=white"/>
+<img src="https://img.shields.io/badge/Oliveira_Systems-000000?style=for-the-badge&logo=About.me&logoColor=white"/>
 </a></p>---
 
 💡 Current Focus
 
 - Backend Development
-- APIs RESTful
+- REST APIs
 - SaaS Platforms
 - Software Architecture
-- Scalable Systems
-- Enterprise Applications
+- Enterprise Systems
 - Clean Code
+- Scalability
+- Docker & Cloud
 - System Design
 
 ---
 
+⚡ Vision
+
+Transforming ideas into scalable systems with modern architecture, premium user experience and real business impact.
+
+---
+
 <p align="center">
-Building real systems with modern architecture 🚀
+🚀 Building real software through Oliveira Systems
 </p><img src="https://capsule-render.vercel.app/api?type=waving&color=0:203a43,100:0f2027&height=120&section=footer"/>
