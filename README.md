@@ -88,14 +88,38 @@ São Leopoldo/RS.
 
 #### 🛒 Minha Loja — E-commerce Full-Stack
 Reescrita completa de um e-commerce com arquitetura de produção: TypeScript
-de ponta a ponta, checkout em múltiplas etapas com **integração real ao
-Stripe** (Checkout + webhook assinado), avaliações de produto com regra de
-negócio validada no backend (só quem comprou pode avaliar), e mais de 100
-produtos reais no catálogo com busca e filtros.
+de ponta a ponta, checkout em 3 etapas (endereço → frete → revisão) com
+**integração real ao Stripe** (Checkout hospedado + webhook assinado por
+HMAC), avaliações de produto com regra de negócio validada no backend
+(verifica se o usuário comprou o item antes de liberar a avaliação — não é
+só uma trava de UI), e mais de 100 produtos reais distribuídos em 8
+categorias, com busca em tempo real e filtros de preço. 28 testes
+automatizados (Vitest) cobrindo services e rotas.
 
 `Node.js` `TypeScript` `Prisma` `MySQL` `React` `Stripe` `Vitest`
 
 📦 [Repositório](https://github.com/RobersonCodes/minha-loja) *(privado — solicite acesso)*
+
+<p align="center">
+<img width="800" alt="Minha Loja — página inicial" src="https://github.com/user-attachments/assets/9b1e3787-c4c4-4ed4-a44a-28f9be6c887c" />
+</p>
+
+---
+
+#### 🛠️ TireMax ERP — SaaS Multi-tenant para Borracharias
+Sistema de gestão completo para borracharias e centros automotivos, com
+arquitetura multi-tenant real (cada cliente isolado por `tenantId` em todas
+as tabelas), controle de ordens de serviço, estoque de pneus com alertas
+automáticos, PDV, financeiro e automação via WhatsApp (Evolution API). Em
+produção, com identidade visual configurável por tenant (white-label).
+
+`React` `Node.js` `Prisma` `Vite` `Tailwind CSS`
+
+🔗 [tiremax.vercel.app](https://tiremax.vercel.app)
+
+<p align="center">
+<img width="800" alt="TireMax ERP — dashboard administrativo" src="https://github.com/user-attachments/assets/3c4f88b6-cdfa-49a7-bbc7-a477a688f3fd" />
+</p>
 
 ---
 
@@ -178,7 +202,8 @@ discutir um desafio técnico, me chama:
 </p>
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/25.gif" width="120" alt="Pikachu animado" />
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/25.gif" width="120" alt="Pikachu em batalha" />
+&nbsp;&nbsp;⚡⚡⚡&nbsp;&nbsp;
 </p>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:203a43,100:0f2027&height=120&section=footer"/>
