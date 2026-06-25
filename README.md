@@ -178,7 +178,7 @@ discutir um desafio técnico, me chama:
 </p>
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/SwagatamJha/swagatamjha/refs/heads/main/Pikachu-Running.gif" width="120" alt="Pikachu correndo" />
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/25.gif" width="120" alt="Pikachu animado" />
 </p>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:203a43,100:0f2027&height=120&section=footer"/>
