@@ -196,7 +196,7 @@ erDiagram
 
 **Estado real:** modelagem de domínio de ERP genuinamente completa para o nicho — 15 models Prisma com constraints únicas bem pensadas por tenant (e-mail, placa, código de produto, número de venda). Isolamento por tenant funciona hoje, mas por convenção manual em cada controller, não por enforcement estrutural — está no roadmap migrar isso. Faltam também testes automatizados, CI e rate limiting. A automação via WhatsApp mencionada em versões anteriores deste README **não existe no código** — foi removida desta descrição.
 
-**Bugs de repositório corrigidos nesta auditoria** (não só o texto): o `docker-compose.yml` subia um container **MySQL** enquanto `schema.prisma`/`.env.example` sempre foram **PostgreSQL** — `docker-compose up` derrubava a API na primeira query. Corrigido. Removidas também 5 variáveis mortas de uma automação WhatsApp que nunca existiu no código, um `database.sql` obsoleto (dialeto MySQL, não referenciado por nenhuma ferramenta), e adicionada a `LICENSE` (MIT) que o README já alegava sem o arquivo existir.
+**Achei e corrigi um bug de verdade aqui, não só de texto**: o `docker-compose.yml` subia um container **MySQL** enquanto `schema.prisma`/`.env.example` sempre foram **PostgreSQL** — `docker-compose up` derrubava a API na primeira query. Corrigido. Removidas também 5 variáveis mortas de uma automação WhatsApp que nunca existiu no código, um `database.sql` obsoleto (dialeto MySQL, sem nada referenciando ele), e adicionada a `LICENSE` (MIT) que o README já alegava sem o arquivo existir.
 
 🔗 [tiremax.vercel.app](https://tiremax.vercel.app)
 
@@ -307,7 +307,7 @@ graph LR
 
 **Estado real:** projeto freelance genuíno, entregue e em uso por um cliente real, com dados de campo migrados de planilha (centenas de contas de revenda, dezenas de produtos) — prova de que sei levar sistema do zero até uso operacional fora de mim mesmo como usuário. Faltam testes automatizados. O repositório é **privado** porque contém dados comerciais de terceiros. Este projeto tinha sido descrito antes como "CRM Enterprise SaaS .NET com CQRS" — essa descrição nunca correspondeu ao código; foi corrigida aqui.
 
-Achado desta auditoria: o repositório contém arquivos órfãos de outro projeto (`src/server.ts`, `src/controllers/`, parte de `src/routes/`, `src/middlewares/`) — um backend Express/Prisma/Stripe que não tem nenhuma dependência declarada no `package.json` deste projeto (CRA puro com Firebase) e não é usado por nenhuma tela real. Provavelmente uma cópia de diretório equivocada num commit anterior. Documentado no README do próprio repositório como débito técnico conhecido; não removido ainda por não termos autorização para mexer em código neste projeto de cliente durante esta sessão.
+O repositório também tem arquivos órfãos de outro projeto (`src/server.ts`, `src/controllers/`, parte de `src/routes/`, `src/middlewares/`) — um backend Express/Prisma/Stripe sem nenhuma dependência declarada no `package.json` deste projeto (CRA puro com Firebase) e sem uso em nenhuma tela real. Provavelmente foi parar aqui numa cópia de pasta errada em algum commit anterior. Ainda não limpei, mas está anotado no README do próprio repositório.
 
 📦 Repositório privado — disponível sob solicitação, sem dados de cliente.
 
@@ -373,7 +373,7 @@ Esta tabela existe de propósito: prefiro que você a veja aqui do que descubra 
 - [ ] Revisão de conformidade dos módulos de automação do Oliveira Apply AI (`shadowApply`, `conexaoCirurgica`) antes de qualquer divulgação pública mais detalhada
 - [ ] Remover os arquivos órfãos de outro projeto do repositório do CRM Comercial B2B (`src/server.ts`, `src/controllers/`, parte de `src/routes/`, `src/middlewares/`)
 - [ ] Changelog e releases versionadas nos projetos ativos
-- [x] Corrigir `docker-compose.yml` do TireMax (subia MySQL, schema é Postgres) e adicionar `LICENSE` (EduLex, TireMax, Oliveira Apply AI) — feito em auditoria de julho/2026
+- [x] Corrigir `docker-compose.yml` do TireMax (subia MySQL, schema é Postgres) e adicionar `LICENSE` em EduLex, TireMax e Oliveira Apply AI
 
 ---
 
