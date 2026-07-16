@@ -16,7 +16,7 @@
 
 <br/>
 
-**5 sistemas auditados linha a linha neste README** · **120+ endpoints combinados** · **multi-tenancy real, billing com webhook validado, testes de integração com Testcontainers**
+**6 sistemas auditados linha a linha neste README** · **140+ endpoints combinados** · **multi-tenancy real, billing com webhook validado, testes de integração com Testcontainers**
 *(sem enfeite de marketing — cada claim abaixo aponta pro código que a sustenta)*
 
 </div>
@@ -35,6 +35,7 @@
   - [Oliveira Apply AI](#3-oliveira-apply-ai)
   - [CRM Comercial B2B](#4-crm-comercial-b2b)
   - [FinAI Família](#5-finai-família)
+  - [SAFEHER](#6-safeher)
 - [Outros destaques](#outros-destaques)
 - [Matriz de engenharia](#matriz-de-engenharia)
 - [Roadmap](#roadmap)
@@ -55,6 +56,7 @@ Já entreguei, entre outros:
 - Um **SaaS de automação de busca de emprego** com billing real via Stripe (`Oliveira Apply AI`)
 - Um **CRM comercial sob medida** para cliente real do setor de distribuição B2B
 - Um **copiloto financeiro familiar** com IA que responde sobre os dados reais da família, em produção (`FinAI Família`)
+- Backend, geofencing e infraestrutura de tempo real de uma **plataforma de prevenção à violência doméstica**, projeto de equipe no curso técnico (`SAFEHER`) — implementação técnica solo dentro do grupo, ver seção do projeto
 
 Trabalho principalmente com **Node.js, TypeScript, React, Next.js, .NET e Java/Spring Boot**.
 
@@ -71,6 +73,7 @@ Trabalho principalmente com **Node.js, TypeScript, React, Next.js, .NET e Java/S
 | [Oliveira Apply AI](#3-oliveira-apply-ai) | 🟡 Funcional | Next.js · Stripe · OpenAI | Webhook de pagamento com verificação de assinatura |
 | [CRM Comercial B2B](#4-crm-comercial-b2b) | 💼 Cliente real | React · Firebase | Em uso operacional (repo privado) |
 | [FinAI Família](#5-finai-família) | 🟢 Implantado | Next.js · .NET 8 · PostgreSQL | [App ao vivo](https://frontend-production-047c.up.railway.app) · CI com 3 jobs |
+| [SAFEHER](#6-safeher) | 🟡 Funcional | React · Node.js · Socket.IO · PostGIS | 101 testes, CI com 3 jobs · [painel ao vivo](https://safeher-651n.vercel.app) |
 
 ---
 
@@ -386,9 +389,57 @@ erDiagram
 
 ---
 
-## Outros destaques
+### 6. SAFEHER
 
-**🛡️ SAFEHER — PWA anti-feminicídio (SBC 2026).** Plataforma acadêmica de monitoramento e alerta: geolocalização com geofencing (Haversine), alertas via Socket.IO, interface disfarçada de calculadora, assistente de IA para crise. `React` `Node.js` `Socket.IO` `PostgreSQL` `LLM API`
+**Plataforma de prevenção à violência doméstica.** Conecta vítima, agressor (tornozeleira) e rede de apoio/instituições em torno de uma medida protetiva: geofencing em tempo real (Haversine) entre os dois dispositivos, botão de pânico, Check-in Inteligente e Safe Walk com escalonamento gradual (lembrete → rede de apoio), painel de gestão para Polícia/CRAS/Juiz/SSP, e um app da vítima **camuflado como calculadora**.
+
+> **Contexto de autoria:** projeto de equipe do curso técnico em Informática (Senac São Leopoldo) — crédito de "Equipe" no README do próprio repositório é de 5 pessoas. O histórico do Git, no entanto, mostra 100% dos commits (40/40) de `RobersonCodes`/Roberson Oliveira: a implementação técnica (backend, geofencing, Socket.IO, CI, os três READMEs) foi solo dentro do grupo. Trago aqui por isso — como prova de código, não como reivindicação de crédito exclusivo de um trabalho de equipe.
+
+`React` `Node.js` `Express` `Socket.IO` `PostgreSQL` `PostGIS` `Prisma` `Vitest` `LLM API`
+
+**Estado real:** 101 testes (91 backend + 4 app-vítima + 6 site-web, contagem exata batendo com o código) e 21 endpoints REST, CI com 3 jobs (backend/app-vítima/site-web + lint) em todo push/PR, histórico consistente de sucesso. Autenticação dupla e coerente com o domínio: staff usa JWT com revogação real de logout (`tokenInvalidoApos`, não apenas stateless); vítima/tornozeleira não fazem login — autenticam por um token de dispositivo por caso. Decisões de escopo documentadas como deliberadas, não gaps: sem detecção de "desvio de rota" (heurística frágil demais pra esse risco), sem "IA preditiva de risco" (exigiria validação clínica que o projeto não tem). Falta hoje: teste de geofencing com dois celulares físicos de verdade (a suíte automatizada cobre a lógica pura de distância/escalonamento, não o hardware GPS real).
+
+🔗 [Painel ao vivo](https://safeher-651n.vercel.app) (Vercel) — repositório privado, disponível sob solicitação.
+
+<details>
+<summary><strong>📐 Ver arquitetura técnica</strong> (geofencing, tempo real, modelo de dados)</summary>
+
+**Três superfícies em torno de um caso:**
+
+```mermaid
+flowchart TB
+    Vitima["app-vitima (PWA)<br/>camuflado como calculadora"] <-->|Socket.IO + REST| Backend
+    Painel["site-web<br/>painel Polícia/CRAS/Juiz/SSP"] <-->|Socket.IO + REST| Backend
+    subgraph Backend["backend (Express)"]
+        Handler["socket/handler.js<br/>geofence · check-in · safe walk"]
+        Worker["workers/alertWorker.js<br/>reenvio de notificações falhas"]
+    end
+    Backend --> DB[(PostgreSQL + PostGIS)]
+    Backend --> Twilio[Twilio<br/>SMS/WhatsApp]
+    Backend --> Push[web-push]
+```
+
+**Geofencing — o núcleo do sistema:** vítima e tornozeleira do agressor enviam posição continuamente; o backend calcula a distância (Haversine) e dispara alerta em tempo real (vítima + painel + rede de apoio) quando ela cai abaixo do limite judicial do caso. Sem fila externa — notificações falhas são reprocessadas via polling no Postgres a cada 30s, decisão deliberada pra escala de um projeto acadêmico.
+
+**Modelo de dados (simplificado):**
+
+```mermaid
+erDiagram
+    CASO ||--|| VITIMA : envolve
+    CASO ||--|| AGRESSOR : envolve
+    CASO ||--o{ CONTATOAPOIO : possui
+    CASO ||--o{ ALERTA : gera
+    CASO ||--o{ CHECKIN : possui
+    CASO ||--o{ CAMINHADASEGURA : possui
+    ALERTA ||--o{ NOTIFICACAOENVIO : possui
+    USUARIO }o--o{ CASO : gerencia
+```
+
+</details>
+
+---
+
+## Outros destaques
 
 **🛒 Minha Loja — e-commerce full-stack.** Checkout em 3 etapas com Stripe (Checkout hospedado + webhook HMAC), avaliação de produto validada no backend (só quem comprou avalia), 28 testes automatizados (Vitest). `Node.js` `TypeScript` `Prisma` `MySQL` `React` `Stripe`
 
@@ -398,7 +449,7 @@ erDiagram
 <img width="800" alt="Minha Loja — página inicial" src="https://github.com/user-attachments/assets/9b1e3787-c4c4-4ed4-a44a-28f9be6c887c" />
 </p>
 
-*(Essas duas descrições foram herdadas do README anterior e não passaram pela mesma auditoria de código linha a linha que os 4 projetos acima passaram.)*
+*(Essa descrição foi herdada do README anterior e não passou pela mesma auditoria de código linha a linha dos projetos acima.)*
 
 ---
 
@@ -413,6 +464,7 @@ O estado real de cada projeto, lado a lado:
 | Oliveira Apply AI | MVC + services isolados | N/A (single-tenant) | ❌ | ❌ | JWT (15min) + refresh rotacionado |
 | CRM Comercial B2B | CRA + Firebase (BaaS) | N/A (cliente único) | ❌ | ❌ | Firebase Auth |
 | FinAI Família | Next.js (BFF proxy) + .NET layered | ⚠️ Manual (por convenção, por família) | ✅ unit+integração (Testcontainers) + componente + E2E | ✅ 3 jobs (backend/frontend/E2E) | JWT (15min) + refresh rotacionado (hash no banco) |
+| SAFEHER | Express + Socket.IO, sem fila externa (polling) | N/A (isolamento por caso, não por tenant) | ✅ 101 testes (lógica pura + orquestração) | ✅ 3 jobs (backend/app-vítima/site-web) | JWT c/ revogação real (staff) + token de dispositivo por caso |
 
 Esta tabela existe de propósito: prefiro que você a veja aqui do que descubra sozinho.
 
@@ -429,6 +481,7 @@ Esta tabela existe de propósito: prefiro que você a veja aqui do que descubra 
 - [ ] Changelog e releases versionadas nos projetos ativos
 - [x] Corrigir `docker-compose.yml` do TireMax (subia MySQL, schema é Postgres) e adicionar `LICENSE` em EduLex, TireMax e Oliveira Apply AI
 - [x] Provar o padrão CI + três camadas de teste (unit/integração/E2E) end-to-end num projeto novo — é o que o FinAI Família faz hoje; falta replicar nos outros
+- [ ] Teste de geofencing do SAFEHER com dois celulares físicos (a suíte automatizada cobre a lógica, não o GPS real)
 
 ---
 
@@ -460,7 +513,7 @@ Esta tabela existe de propósito: prefiro que você a veja aqui do que descubra 
 Porque não têm, de verdade — e prefiro dizer isso a fingir que têm. Está no roadmap.
 
 **Você trabalha sozinho nesses projetos?**
-Sim, nos de portfólio pessoal. O CRM Comercial foi entregue para um cliente real como freelancer.
+Sim, nos de portfólio pessoal. O CRM Comercial foi entregue para um cliente real como freelancer. O SAFEHER é a exceção diferente: projeto de equipe (5 pessoas) do curso técnico — mas o histórico do Git mostra 100% dos commits vindos de mim, então trago aqui como prova da implementação técnica que fiz, não como projeto solo.
 
 **Por que o TireMax não tem mais a automação via WhatsApp que estava aqui antes?**
 Porque, auditando o próprio código, ela não existe. Prefiro corrigir a manter uma alegação que não se sustenta se alguém abrir o repositório.
