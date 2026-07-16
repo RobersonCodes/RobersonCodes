@@ -16,7 +16,7 @@
 
 <br/>
 
-**4 sistemas auditados linha a linha neste README** · **90+ endpoints combinados** · **multi-tenancy real, billing com webhook validado, testes de integração com Testcontainers**
+**5 sistemas auditados linha a linha neste README** · **120+ endpoints combinados** · **multi-tenancy real, billing com webhook validado, testes de integração com Testcontainers**
 *(sem enfeite de marketing — cada claim abaixo aponta pro código que a sustenta)*
 
 </div>
@@ -34,6 +34,7 @@
   - [TireMax ERP](#2-tiremax-erp)
   - [Oliveira Apply AI](#3-oliveira-apply-ai)
   - [CRM Comercial B2B](#4-crm-comercial-b2b)
+  - [FinAI Família](#5-finai-família)
 - [Outros destaques](#outros-destaques)
 - [Matriz de engenharia](#matriz-de-engenharia)
 - [Roadmap](#roadmap)
@@ -53,6 +54,7 @@ Já entreguei, entre outros:
 - Uma **plataforma educacional** com Clean Architecture e testes de integração reais (`EduLex`)
 - Um **SaaS de automação de busca de emprego** com billing real via Stripe (`Oliveira Apply AI`)
 - Um **CRM comercial sob medida** para cliente real do setor de distribuição B2B
+- Um **copiloto financeiro familiar** com IA que responde sobre os dados reais da família, em produção (`FinAI Família`)
 
 Trabalho principalmente com **Node.js, TypeScript, React, Next.js, .NET e Java/Spring Boot**.
 
@@ -68,6 +70,7 @@ Trabalho principalmente com **Node.js, TypeScript, React, Next.js, .NET e Java/S
 | [TireMax ERP](#2-tiremax-erp) | 🟢 Implantado | React · Node.js · Prisma | [Dashboard ao vivo](https://tiremax.vercel.app) |
 | [Oliveira Apply AI](#3-oliveira-apply-ai) | 🟡 Funcional | Next.js · Stripe · OpenAI | Webhook de pagamento com verificação de assinatura |
 | [CRM Comercial B2B](#4-crm-comercial-b2b) | 💼 Cliente real | React · Firebase | Em uso operacional (repo privado) |
+| [FinAI Família](#5-finai-família) | 🟢 Implantado | Next.js · .NET 8 · PostgreSQL | [App ao vivo](https://frontend-production-047c.up.railway.app) · CI com 3 jobs |
 
 ---
 
@@ -126,11 +129,11 @@ Trabalho principalmente com **Node.js, TypeScript, React, Next.js, .NET e Java/S
 
 ### 1. EduLex
 
-**Plataforma educacional multi-tenant.** Plataforma de gestão de vocabulário/idiomas para escolas: dicionário multilíngue, turmas e matrículas, atividades com submissão e correção, gamificação (níveis, badges, missões) e geração de conteúdo assistida por IA (Anthropic — histórias, explicações de palavras, sugestão de exercícios).
+**Plataforma educacional multi-tenant.** Plataforma de gestão de vocabulário/idiomas para escolas: dicionário multilíngue, turmas e matrículas, atividades com submissão e correção, gamificação (níveis, badges, missões) e geração de conteúdo assistida por LLM via API (histórias, explicações de palavras, sugestão de exercícios).
 
 Este é o projeto com a **arquitetura mais rigorosa** do portfólio: 4 camadas reais (Domain sem nenhuma dependência de framework), CQRS via MediatR, e isolamento de tenant **automático** — não depende de nenhum desenvolvedor lembrar de filtrar por tenant em cada query.
 
-`.NET 8` `EF Core` `PostgreSQL` `Redis` `MediatR` `Anthropic API` `Testcontainers`
+`.NET 8` `EF Core` `PostgreSQL` `Redis` `MediatR` `LLM API` `Testcontainers`
 
 **Estado real:** 45 endpoints em 8 controllers, **124 testes** (`[Fact]`/`[Theory]`, contagem exata no código) cobrindo unit (Domain/Application) e integração com Testcontainers reais de Postgres e Redis — não mock de infraestrutura — em 4 migrations incrementais bem versionadas. É o projeto tecnicamente mais maduro do portfólio. Falta: CI configurado e validação com usuários reais em produção. README próprio reescrito com hero, diagramas Mermaid e LICENSE (MIT) adicionada — [ver repositório](https://github.com/RobersonCodes/SaaS-Educativo).
 
@@ -144,7 +147,7 @@ graph TD
     API["EduLex.API<br/>Controllers, Middleware, bootstrap de DI"] --> APP
     APP["EduLex.Application<br/>CQRS via MediatR: Commands & Queries"] --> DOM
     DOM["EduLex.Domain<br/>Entidades e regras de negócio<br/>(zero dependência de framework)"]
-    INFRA["EduLex.Infrastructure<br/>EF Core · Redis · Identity · Anthropic client"] -.implementa interfaces de.-> APP
+    INFRA["EduLex.Infrastructure<br/>EF Core · Redis · Identity · LLM client"] -.implementa interfaces de.-> APP
     INFRA -.implementa interfaces de.-> DOM
     API -.registra via DI.-> INFRA
 ```
@@ -333,9 +336,59 @@ graph TD
 
 ---
 
+### 5. FinAI Família
+
+**Copiloto financeiro familiar.** Organização financeira com um assistente de IA que responde perguntas sobre os dados reais da família (contas, lançamentos, financiamentos) via streaming — não um chatbot genérico com prompt fixo. Em produção, uso pessoal diário.
+
+`Next.js 16` `.NET 8` `EF Core` `PostgreSQL` `Playwright` `LLM API`
+
+**Estado real:** 30 endpoints em 10 controllers (contagem direta no código — a tabela de API do README do próprio repositório lista só ~20, esqueceu de listar os controllers de metas e insights). Cobertura de teste em três camadas de verdade: unitária + integração com Testcontainers no backend (xUnit), componentes no frontend (Vitest + Testing Library), E2E (Playwright) — e CI (GitHub Actions, 3 jobs em paralelo) rodando tudo isso a cada push/PR, com histórico consistente de sucesso. Isolamento por família é por convenção manual (`.Where(x => x.FamilyId == familyId)` em cada query), não um query filter automático — mesma categoria do TireMax, não da automação do EduLex. Escrever os testes achou dois bugs reais antes de produção: um deles deixava o rótulo de saúde financeira "crítico" **matematicamente inatingível** (dead code que nunca apareceria pra nenhum usuário), corrigido escalonando o desconto por atraso.
+
+🔗 [App ao vivo](https://frontend-production-047c.up.railway.app) — repositório privado, disponível sob solicitação.
+
+<details>
+<summary><strong>📐 Ver arquitetura técnica</strong> (BFF, auth, modelo de dados)</summary>
+
+**Arquitetura — proxy BFF, não fetch client-side direto:**
+
+```mermaid
+flowchart LR
+    Browser["Browser<br/>(Next.js client components)"] -->|cookies httpOnly| BFF
+    subgraph NextJS["Next.js (Node.js)"]
+        BFF["/api/auth/* e /api/proxy/*<br/>route handlers"]
+    end
+    BFF -->|Authorization: Bearer, JWT curto| API["ASP.NET Core API"]
+    API --> DB[(PostgreSQL)]
+```
+
+O middleware do Next.js só checa se o cookie de sessão existe (gate de UX, evita mostrar a casca de página protegida); a validação real do JWT acontece sempre no backend a cada chamada via `/api/proxy` — o segredo do token nunca fica exposto no bundle do cliente.
+
+**Modelo de dados (simplificado):**
+
+```mermaid
+erDiagram
+    USER ||--|| FAMILYMEMBER : e
+    FAMILYMEMBER }o--|| FAMILY : pertence
+    FAMILY ||--o{ BILL : possui
+    FAMILY ||--o{ TRANSACTION : possui
+    FAMILY ||--o{ CARD : possui
+    FAMILY ||--o{ LOAN : possui
+    FAMILY ||--o{ GOAL : possui
+    FAMILY ||--o{ CHATMESSAGE : possui
+    BILL }o--|| CATEGORY : classificada_por
+    TRANSACTION }o--|| CATEGORY : classificada_por
+    USER ||--o{ REFRESHTOKEN : possui
+```
+
+**Amortização (Tabela Price):** `PMT = PV·i / (1-(1+i)⁻ⁿ)`, com um simulador de antecipação que resolve o número de parcelas restantes de forma fracionária antes de arredondar só na exibição — arredondar antes do cálculo de economia subestimava o valor real (bug encontrado e corrigido durante o desenvolvimento, coberto por teste de regressão).
+
+</details>
+
+---
+
 ## Outros destaques
 
-**🛡️ SAFEHER — PWA anti-feminicídio (SBC 2026).** Plataforma acadêmica de monitoramento e alerta: geolocalização com geofencing (Haversine), alertas via Socket.IO, interface disfarçada de calculadora, assistente de IA para crise. `React` `Node.js` `Socket.IO` `PostgreSQL` `Anthropic API`
+**🛡️ SAFEHER — PWA anti-feminicídio (SBC 2026).** Plataforma acadêmica de monitoramento e alerta: geolocalização com geofencing (Haversine), alertas via Socket.IO, interface disfarçada de calculadora, assistente de IA para crise. `React` `Node.js` `Socket.IO` `PostgreSQL` `LLM API`
 
 **🛒 Minha Loja — e-commerce full-stack.** Checkout em 3 etapas com Stripe (Checkout hospedado + webhook HMAC), avaliação de produto validada no backend (só quem comprou avalia), 28 testes automatizados (Vitest). `Node.js` `TypeScript` `Prisma` `MySQL` `React` `Stripe`
 
@@ -359,6 +412,7 @@ O estado real de cada projeto, lado a lado:
 | TireMax ERP | MVC pragmático (routes → controllers → Prisma) | ⚠️ Manual (por convenção) | ❌ | ❌ | JWT (7 dias, sem refresh) |
 | Oliveira Apply AI | MVC + services isolados | N/A (single-tenant) | ❌ | ❌ | JWT (15min) + refresh rotacionado |
 | CRM Comercial B2B | CRA + Firebase (BaaS) | N/A (cliente único) | ❌ | ❌ | Firebase Auth |
+| FinAI Família | Next.js (BFF proxy) + .NET layered | ⚠️ Manual (por convenção, por família) | ✅ unit+integração (Testcontainers) + componente + E2E | ✅ 3 jobs (backend/frontend/E2E) | JWT (15min) + refresh rotacionado (hash no banco) |
 
 Esta tabela existe de propósito: prefiro que você a veja aqui do que descubra sozinho.
 
@@ -374,6 +428,7 @@ Esta tabela existe de propósito: prefiro que você a veja aqui do que descubra 
 - [ ] Remover os arquivos órfãos de outro projeto do repositório do CRM Comercial B2B (`src/server.ts`, `src/controllers/`, parte de `src/routes/`, `src/middlewares/`)
 - [ ] Changelog e releases versionadas nos projetos ativos
 - [x] Corrigir `docker-compose.yml` do TireMax (subia MySQL, schema é Postgres) e adicionar `LICENSE` em EduLex, TireMax e Oliveira Apply AI
+- [x] Provar o padrão CI + três camadas de teste (unit/integração/E2E) end-to-end num projeto novo — é o que o FinAI Família faz hoje; falta replicar nos outros
 
 ---
 
