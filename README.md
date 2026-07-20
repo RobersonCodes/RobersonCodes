@@ -12,7 +12,7 @@
 <a href="https://oliveirasystems.dev"><img src="https://img.shields.io/badge/oliveirasystems.dev-000000?style=flat-square&logo=googlechrome&logoColor=white"/></a>
 </p>
 
-🇧🇷 RS, Brasil · Founder @ Oliveira Systems · Aberto a oportunidades Full-Stack/Backend remotas
+🇧🇷 RS, Brasil · Criador de produtos SaaS independentes · Aberto a oportunidades Full-Stack/Backend remotos
 
 <br/>
 
