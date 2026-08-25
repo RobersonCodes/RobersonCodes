@@ -1,0 +1,12 @@
+# Local Codex and Claude settings
+.claude/settings.local.json
+.codex/
+.agents/
+
+# Local exports and archives
+*.zip
+README.backup.md
+
+# Operating system metadata
+.DS_Store
+Thumbs.db

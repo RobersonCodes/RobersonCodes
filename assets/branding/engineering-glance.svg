@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">Engineering at a glance</title>
+  <desc id="desc">Across the three selected projects: 155 API routes, 433 automated checks, three systems, multi-tenancy, Testcontainers and CI/CD.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1"><stop stop-color="#050910"/><stop offset="1" stop-color="#091220"/></linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#3483f61f"/></pattern>
+  </defs>
+  <rect width="1200" height="300" rx="18" fill="url(#bg)"/>
+  <rect x="1" y="1" width="1198" height="298" rx="17" fill="none" stroke="#18324f"/>
+  <rect width="1200" height="300" rx="18" fill="url(#grid)"/>
+  <text x="40" y="42" fill="#4f9cff" font-family="monospace" font-size="12" font-weight="700" letter-spacing="2.5">03 / ENGINEERING AT A GLANCE</text>
+  <g transform="translate(40 68)" font-family="monospace">
+    <g><rect width="350" height="96" rx="8" fill="#08101c" stroke="#1c3d62"/><text x="20" y="31" fill="#71839a" font-size="11" letter-spacing="1.5">API ROUTES / SELECTED WORK</text><text x="20" y="74" fill="#f8fafc" font-size="36" font-weight="700">155</text></g>
+    <g transform="translate(365)"><rect width="350" height="96" rx="8" fill="#08101c" stroke="#1c3d62"/><text x="20" y="31" fill="#71839a" font-size="11" letter-spacing="1.5">AUTOMATED CHECKS DEFINED</text><text x="20" y="74" fill="#f8fafc" font-size="36" font-weight="700">433</text></g>
+    <g transform="translate(730)"><rect width="390" height="96" rx="8" fill="#08101c" stroke="#1c3d62"/><text x="20" y="31" fill="#71839a" font-size="11" letter-spacing="1.5">SELECTED SYSTEMS</text><text x="20" y="74" fill="#f8fafc" font-size="36" font-weight="700">03</text></g>
+    <g transform="translate(0 112)"><rect width="350" height="72" rx="8" fill="#07141a" stroke="#164555"/><circle cx="24" cy="36" r="5" fill="#31c7d7"/><text x="42" y="41" fill="#dce8f4" font-size="14" font-weight="700" letter-spacing="1.2">MULTI-TENANCY</text></g>
+    <g transform="translate(365 112)"><rect width="350" height="72" rx="8" fill="#07141a" stroke="#164555"/><circle cx="24" cy="36" r="5" fill="#31c7d7"/><text x="42" y="41" fill="#dce8f4" font-size="14" font-weight="700" letter-spacing="1.2">TESTCONTAINERS</text></g>
+    <g transform="translate(730 112)"><rect width="390" height="72" rx="8" fill="#07140f" stroke="#185036"/><circle cx="24" cy="36" r="5" fill="#39d98a"/><text x="42" y="41" fill="#dce8f4" font-size="14" font-weight="700" letter-spacing="1.2">CI/CD PIPELINES</text></g>
+  </g>
+  <text x="40" y="280" fill="#53677f" font-family="monospace" font-size="9" letter-spacing="1.4">AUDITED 2026-08-25 · COUNTS TRACEABLE TO CURRENT ROUTES, TEST DECLARATIONS AND CI</text>
+</svg>

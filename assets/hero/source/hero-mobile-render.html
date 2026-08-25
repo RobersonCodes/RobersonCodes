@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roberson de Oliveira — Mobile GitHub Hero</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 800px; height: 950px; overflow: hidden; background: #03070d; }
+    body { font-family: Arial, Helvetica, sans-serif; color: #f6f9ff; }
+    .hero { position: relative; width: 800px; height: 950px; overflow: hidden; border: 1px solid #17304d; background: #03070d; }
+    .earth { position: absolute; inset: 0 0 auto; height: 500px; background: url("./earth-night-network-source.png") 63% 18% / auto 560px no-repeat; }
+    .earth::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(3,7,13,.08), rgba(3,7,13,.05) 50%, #03070d 100%); }
+    .grid { position: absolute; inset: 0; opacity: .22; background-image: linear-gradient(rgba(52,131,246,.13) 1px, transparent 1px), linear-gradient(90deg, rgba(52,131,246,.12) 1px, transparent 1px); background-size: 48px 48px; mask-image: linear-gradient(#000, transparent 72%); }
+    .topline { position: absolute; top: 26px; left: 34px; right: 34px; display: flex; justify-content: space-between; padding-bottom: 14px; border-bottom: 1px solid rgba(91,157,255,.28); color: #8698ad; font: 700 11px/1 "Courier New", monospace; letter-spacing: 1.6px; }
+    .online { color: #63e6a3; }
+    .dot { display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: #31d98b; box-shadow: 0 0 12px rgba(49,217,139,.8); }
+    .content { position: absolute; left: 42px; right: 42px; top: 430px; }
+    .index { margin-bottom: 18px; color: #4f9cff; font: 700 12px/1 "Courier New", monospace; letter-spacing: 3px; }
+    h1 { margin: 0; font-size: 72px; line-height: .91; letter-spacing: -3px; font-weight: 800; }
+    h1 span { color: #7db7ff; }
+    .role { margin-top: 20px; color: #d8e5f6; font: 700 16px/1 "Courier New", monospace; letter-spacing: 4px; }
+    .statement { margin: 28px 0 0; width: 680px; color: #aab9ca; font-size: 24px; line-height: 1.45; }
+    .core { display: inline-flex; gap: 12px; margin-top: 26px; padding: 13px 16px; border: 1px solid rgba(79,156,255,.42); background: rgba(7,20,36,.8); box-shadow: inset 3px 0 #3483f6; font: 700 14px/1 "Courier New", monospace; }
+    .core i { color: #3483f6; font-style: normal; }
+    .disciplines { margin-top: 20px; color: #70829a; font: 700 11px/1.5 "Courier New", monospace; letter-spacing: 1.3px; }
+    .build { position: absolute; left: 42px; right: 42px; bottom: 34px; display: grid; grid-template-columns: 1fr auto; align-items: center; padding: 18px 20px; border: 1px solid rgba(76,143,238,.35); border-left: 4px solid #2f7ff2; background: #07101c; font-family: "Courier New", monospace; }
+    .build small { color: #62758d; font-size: 10px; font-weight: 700; letter-spacing: 2px; }
+    .build strong { display: block; margin-top: 7px; font-size: 15px; letter-spacing: 1.2px; }
+    .build .state { color: #63e6a3; font-size: 11px; font-weight: 700; letter-spacing: 1.4px; }
+  </style>
+</head>
+<body>
+  <main class="hero" role="img" aria-label="Roberson de Oliveira, Software Engineer — mobile portfolio hero with a technological Earth focused on South America">
+    <div class="earth"></div><div class="grid"></div>
+    <div class="topline"><span>ROBERSON.DEV</span><span class="online"><span class="dot"></span>SYSTEM ONLINE</span></div>
+    <section class="content">
+      <div class="index">01 / IDENTITY</div>
+      <h1>ROBERSON<br><span>DE OLIVEIRA</span></h1>
+      <div class="role">SOFTWARE ENGINEER</div>
+      <p class="statement">Building production systems, SaaS products and APIs that solve real problems and scale.</p>
+      <div class="core">TYPESCRIPT <i>/</i> NODE.JS <i>/</i> POSTGRESQL</div>
+      <div class="disciplines">BACKEND · SAAS · APIS · CLEAN ARCHITECTURE</div>
+    </section>
+    <aside class="build"><div><small>CURRENT BUILD</small><strong>OLIVEIRA SYSTEMS</strong></div><div class="state"><span class="dot"></span>STATUS: ONLINE</div></aside>
+  </main>
+</body>
+</html>
