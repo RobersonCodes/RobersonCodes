@@ -18,6 +18,8 @@ Desenvolvo produtos SaaS completos, da modelagem do banco e APIs até testes, CI
 
 **Open to international Backend or Full Stack remote opportunities and contractor roles.**
 
+**English:** basic proficiency, currently studying and improving technical communication.
+
 </div>
 
 ## Projetos principais
