@@ -10,9 +10,13 @@
 
 Desenvolvo produtos SaaS completos, da modelagem do banco e APIs até testes, CI/CD e deploy em produção.
 
+*I build production-ready SaaS products across backend, frontend, databases, automated testing and deployment.*
+
 [Portfólio](https://oliveirasystems.dev) · [LinkedIn](https://www.linkedin.com/in/roberson-de-oliveira-tecnologia) · [E-mail](mailto:roberson_sl@hotmail.com)
 
-**Disponível para oportunidades Backend ou Full Stack — remoto no Brasil ou presencial/híbrido no RS.**
+**Disponível para oportunidades Backend ou Full Stack — remoto no Brasil e no exterior, ou presencial/híbrido no RS.**
+
+**Open to international Backend or Full Stack remote opportunities and contractor roles.**
 
 </div>
 
@@ -72,7 +76,7 @@ Uso ferramentas de IA como apoio ao desenvolvimento, mantendo responsabilidade s
 
 ## Contato
 
-- São Leopoldo, RS, Brasil
+- São Leopoldo, RS, Brasil — available for worldwide remote work
 - [oliveirasystems.dev](https://oliveirasystems.dev)
 - [linkedin.com/in/roberson-de-oliveira-tecnologia](https://www.linkedin.com/in/roberson-de-oliveira-tecnologia)
 - [roberson_sl@hotmail.com](mailto:roberson_sl@hotmail.com)
